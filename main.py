@@ -1,6 +1,12 @@
 import json
 from telethon import TelegramClient, events
 from pymongo import MongoClient
+import logging
+
+# Config logging lib
+logging.basicConfig(format='[%(asctime)s %(levelname)s]: %(message)s', level=logging.INFO, datefmt='%I:%M:%S')
+
+
 
 # Load configuration from JSON file
 with open('config.json', 'r') as config_file:
@@ -64,6 +70,7 @@ async def order(event):
 
     await event.respond(f"Your order has been placed! Please visit the following link to make payment:\n{payment_link}")
 
-
+logging.info('Starting...')
 client.start()
+logging.info("Bot Started Successfully!")
 client.run_until_disconnected()
