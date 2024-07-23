@@ -1,2 +1,2 @@
 # shop-bot
- a telegram bot to sell your product
+ a telegram bot for your shop
